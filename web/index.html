@@ -1,0 +1,279 @@
+<!--
+ ███████╗░█████╗░███╗░░██╗████████╗░█████╗░░░░██████╗░███████╗██╗░░░██╗
+ ╚════██║██╔══██╗████╗░██║╚══██╔══╝██╔══██╗░░░██╔══██╗██╔════╝██║░░░██║
+ ░░███╔═╝██║░░██║██╔██╗██║░░░██║░░░██║░░██║░░░██║░░██║█████╗░░╚██╗░██╔╝
+ ██╔══╝░░██║░░██║██║╚████║░░░██║░░░██║░░██║░░░██║░░██║██╔══╝░░░╚████╔╝░
+ ███████╗╚█████╔╝██║░╚███║░░░██║░░░╚█████╔╝██╗██████╔╝███████╗░░╚██╔╝░░
+ ╚══════╝░╚════╝░╚═╝░░╚══╝░░░╚═╝░░░░╚════╝░╚═╝╚═════╝░╚══════╝░░░╚═╝░░░
+                                             >> https://github.com/zooont -->
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <link rel="icon" href="img/logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" />
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  
+  <!-- Primary Meta Tags -->
+<title>zontoPassgen — крутой генератор паролей!</title>
+<meta name="title" content="zontoPassgen — крутой генератор паролей!">
+<meta name="description" content="сгенерируй надежный генератор паролей прямо сейчас!">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://metatags.io/">
+<meta property="og:title" content="zontoPassgen — крутой генератор паролей!">
+<meta property="og:description" content="сгенерируй надежный генератор паролей прямо сейчас!">
+<meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://metatags.io/">
+<meta property="twitter:title" content="zontoPassgen — крутой генератор паролей!">
+<meta property="twitter:description" content="сгенерируй надежный генератор паролей прямо сейчас!">
+<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+  <meta content="#ff9d5b" data-react-helmet="true" name="theme-color" />   
+  <link rel="apple-touch-icon" sizes="144x144" href="\web\img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="\web\img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="\web\img/favicon-16x16.png">
+  <link rel="manifest" href="\web\img/site.webmanifest">
+  <link rel="mask-icon" href="\web\img/safari-pinned-tab.svg" color="#e1f04b">
+  <link rel="shortcut icon" href="\web\img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="\web\img/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+ <script src="https://kit.fontawesome.com/3e58c377ff.js" crossorigin="anonymous"></script>
+ <script>
+  console.warn("Куда мы лезем бозе 🙄")
+ </script>
+ <style>
+  body {
+    background: #232428;
+  }
+  .container {
+  margin: 0;
+  color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+} 
+
+@media only screen and (max-width: 1200px) {
+  .center {
+    width: 100%;
+  }
+}
+
+.about {
+  width: 50%;
+  text-align: justify;
+  margin: auto;
+}
+
+.logo {
+  border-radius: 20px;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+.wrapper .icon {
+  position: relative;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #2b2b2b;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.1);
+}
+
+.wrapper .email:hover,
+.wrapper .email:hover .tooltip,
+.wrapper .email:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.text-field__input:focus {
+  color: #212529;
+  background-color: #232428;
+  border-color: #232428;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+
+ </style>
+ <style>
+    body{animation: 3s ease-out 0s 1 FadeIn;}
+    @keyframes FadeIn {
+        0% {
+          opacity:0;
+        }
+        100% {
+          opacity:1;
+        }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="center shadow-6">
+      <a href=""><img style="border-radius: 18%" src="img/logo.svg" alt="" width="256" height="256"></a>
+      <h1 style="padding: 30px;">генератор паролей</h1>
+      <div class="about">
+        <script>
+          document.getElementById('iframe').contentWindow.document.write("# ███████╗░█████╗░███╗░░██╗████████╗░█████╗░░░░██████╗░███████╗██╗░░░██╗
+# ╚════██║██╔══██╗████╗░██║╚══██╔══╝██╔══██╗░░░██╔══██╗██╔════╝██║░░░██║
+# ░░███╔═╝██║░░██║██╔██╗██║░░░██║░░░██║░░██║░░░██║░░██║█████╗░░╚██╗░██╔╝
+# ██╔══╝░░██║░░██║██║╚████║░░░██║░░░██║░░██║░░░██║░░██║██╔══╝░░░╚████╔╝░
+# ███████╗╚█████╔╝██║░╚███║░░░██║░░░╚█████╔╝██╗██████╔╝███████╗░░╚██╔╝░░
+# ╚══════╝░╚════╝░╚═╝░░╚══╝░░░╚═╝░░░░╚════╝░╚═╝╚═════╝░╚══════╝░░░╚═╝░░░
+#                                             >> https://github.com/zooont
+
+# Импортирую библиотеки и чищу/объявляю библиотеки
+import random
+import os
+import time
+import itertools
+import threading
+import sys
+
+class style:
+   GREEN = '\033[77m'
+   YELLOW = '\033[93m'
+   RED = '\033[91m'
+   BOLD = '\033[1m'
+   ITALIC = '\e[3m'
+   UNDERLINE = '\033[4m'
+   END = '\033[0m'
+
+done = False
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\r                               Грузимся ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+
+# Лжезагрузка
+print(style.BOLD + style.GREEN + """
+███████╗░█████╗░███╗░░██╗████████╗░█████╗░░░░██████╗░███████╗██╗░░░██╗
+╚════██║██╔══██╗████╗░██║╚══██╔══╝██╔══██╗░░░██╔══██╗██╔════╝██║░░░██║
+░░███╔═╝██║░░██║██╔██╗██║░░░██║░░░██║░░██║░░░██║░░██║█████╗░░╚██╗░██╔╝
+██╔══╝░░██║░░██║██║╚████║░░░██║░░░██║░░██║░░░██║░░██║██╔══╝░░░╚████╔╝░
+███████╗╚█████╔╝██║░╚███║░░░██║░░░╚█████╔╝██╗██████╔╝███████╗░░╚██╔╝░░
+╚══════╝░╚════╝░╚═╝░░╚══╝░░░╚═╝░░░░╚════╝░╚═╝╚═════╝░╚══════╝░░░╚═╝░░░""" + style.END)
+print(style.ITALIC + "                                             >> https://github.com/zooont\n" + style.END)
+                                                                      
+t = threading.Thread(target=animate)
+t.start()
+time.sleep(3)
+done = True
+
+# Основная часть кода
+os.system('cls')
+gen=True
+while gen:
+  print("Генератор паролей 1.0\n")
+  chars = '+-/*!&$#?=@<>AaBbcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+  length = input(" » 🎉 Введите длину пароля: ")
+  length = int(length)
+  for n in range(1):
+      password =''
+      for i in range(length):
+        password += random.choice(chars)
+  print("🔐 Ваш пароль:", password, "\n(длина ", length, " символов)")
+  gen=False
+  print("\n♻ Автовозврат в меню через минуту!")
+  time.sleep(5)
+  gen=True");
+          </script>
+          <div class="iframe">
+        <iframe
+        src="https://jupyterlite.github.io/demo/repl/index.html?kernel=python&toolbar=1"
+        width="150%"
+        height="500px"
+      >
+      </iframe>
+    </div>
+      <ul class="wrapper">
+      </ul>
+        <footer>
+          <p></p>
+          </p>
+          <p>© 2023, zontoed. Защищено лицензией Mozilla Public License 2.0. </p>
+        </footer>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript"></script>
+</body>
+
+</html>
